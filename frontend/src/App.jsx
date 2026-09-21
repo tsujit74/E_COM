@@ -1,8 +1,14 @@
+import Navbar from "./components/Navbar";
+
 function App() {
   return (
-    <div>
-      <h1>Order Panel</h1>
-    </div>
+    <>
+      <Navbar />
+
+      <main className="page-container">
+        <h1>Order Panel</h1>
+      </main>
+    </>
   );
 }
 
