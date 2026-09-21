@@ -4,11 +4,13 @@ import Navbar from "./components/Navbar";
 import SearchOrders from "./components/SearchOrders";
 import OrderList from "./components/OrderList";
 import TrackingModal from "./components/TrackingModal";
+import Invoice from "./components/Invoice";
 
 function App() {
   const [orders, setOrders] = useState([]);
   const [searchResults, setSearchResults] = useState(null);
   const [selectedOrder, setSelectedOrder] = useState(null);
+  const [invoiceOrder, setInvoiceOrder] = useState(null);
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -37,7 +39,7 @@ function App() {
   };
 
   const handleInvoice = (order) => {
-    alert(`Invoice generation for ${order.id}`);
+    setInvoiceOrder(order);
   };
 
   return (
@@ -62,6 +64,8 @@ function App() {
         order={selectedOrder}
         onClose={() => setSelectedOrder(null)}
       />
+
+      <Invoice order={invoiceOrder} onClose={() => setInvoiceOrder(null)} />
     </>
   );
 }
