@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import SearchOrders from "./components/SearchOrders";
 import OrderList from "./components/OrderList";
+import TrackingModal from "./components/TrackingModal";
 
 function App() {
   const [orders, setOrders] = useState([]);
   const [searchResults, setSearchResults] = useState(null);
+  const [selectedOrder, setSelectedOrder] = useState(null);
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -31,7 +33,7 @@ function App() {
   const displayedOrders = searchResults ?? orders;
 
   const handleTrack = (order) => {
-    alert(`Tracking: ${order.id}`);
+    setSelectedOrder(order);
   };
 
   const handleInvoice = (order) => {
@@ -55,6 +57,11 @@ function App() {
           onInvoice={handleInvoice}
         />
       </main>
+
+      <TrackingModal
+        order={selectedOrder}
+        onClose={() => setSelectedOrder(null)}
+      />
     </>
   );
 }

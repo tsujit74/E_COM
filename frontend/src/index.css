@@ -398,3 +398,115 @@ body {
   color: #666;
   font-size: 13px;
 }
+
+/*Tracking modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.tracking-modal {
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7e9;
+}
+
+.modal-header h2 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  color: #202124;
+}
+
+.modal-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #777;
+}
+
+.modal-close {
+  border: none;
+  background: transparent;
+  color: #666;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.tracking-timeline {
+  padding: 24px;
+}
+
+.tracking-item {
+  display: flex;
+  min-height: 58px;
+}
+
+.tracking-dot {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border: 2px solid #cfd4d8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tracking-dot.completed {
+  border-color: #159a8c;
+  background: #159a8c;
+}
+
+.tracking-content {
+  position: relative;
+  padding-left: 14px;
+  flex: 1;
+}
+
+.tracking-content strong {
+  display: block;
+  padding-top: 3px;
+  color: #444;
+  font-size: 13px;
+}
+
+.tracking-line {
+  position: absolute;
+  left: -13px;
+  top: 24px;
+  width: 2px;
+  height: 34px;
+  background: #cfd4d8;
+}
+
+.tracking-line.completed {
+  background: #159a8c;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7e9;
+}
