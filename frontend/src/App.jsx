@@ -5,6 +5,7 @@ import SearchOrders from "./components/SearchOrders";
 import OrderList from "./components/OrderList";
 import TrackingModal from "./components/TrackingModal";
 import Invoice from "./components/Invoice";
+import { getOrders } from "./services/api";
 
 function App() {
   const [orders, setOrders] = useState([]);
@@ -15,15 +16,9 @@ function App() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/orders");
+        const data = await getOrders();
 
-        const result = await response.json();
-
-        if (!response.ok) {
-          throw new Error(result.message || "Failed to fetch orders");
-        }
-
-        setOrders(result.data);
+        setOrders(data);
       } catch (error) {
         console.error(error);
       }
@@ -50,7 +45,9 @@ function App() {
         <SearchOrders onResults={setSearchResults} />
 
         {searchResults && (
-          <p className="result-info">{searchResults.length} order(s) found</p>
+          <p className="result-info">
+            {searchResults.length} order(s) found
+          </p>
         )}
 
         <OrderList
@@ -65,7 +62,10 @@ function App() {
         onClose={() => setSelectedOrder(null)}
       />
 
-      <Invoice order={invoiceOrder} onClose={() => setInvoiceOrder(null)} />
+      <Invoice
+        order={invoiceOrder}
+        onClose={() => setInvoiceOrder(null)}
+      />
     </>
   );
 }

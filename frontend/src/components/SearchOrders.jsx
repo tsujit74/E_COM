@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { searchOrders } from "../services/api";
 
 function SearchOrders({ onResults }) {
   const [type, setType] = useState("orderId");
@@ -16,19 +17,9 @@ function SearchOrders({ onResults }) {
     try {
       setLoading(true);
 
-      const response = await fetch(
-        `http://localhost:5000/api/orders/search?type=${type}&value=${encodeURIComponent(
-          value.trim()
-        )}`
-      );
+      const data = await searchOrders(type, value);
 
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.message || "Search failed");
-      }
-
-      onResults(result.data);
+      onResults(data);
     } catch (error) {
       console.error(error);
       onResults([]);
@@ -48,7 +39,6 @@ function SearchOrders({ onResults }) {
 
       <form className="search-form" onSubmit={handleSearch}>
         <div className="search-toolbar">
-
           <div className="search-options">
             <label className="search-option">
               <input
@@ -96,16 +86,10 @@ function SearchOrders({ onResults }) {
             type="text"
             value={value}
             onChange={(e) => setValue(e.target.value)}
-            placeholder={`Enter ${
-              type === "orderId" ? "Order ID" : type
-            }`}
+            placeholder={`Enter ${type === "orderId" ? "Order ID" : type}`}
           />
 
-          <button
-            className="search-btn"
-            type="submit"
-            disabled={loading}
-          >
+          <button className="search-btn" type="submit" disabled={loading}>
             {loading ? "Searching..." : "Search"}
           </button>
 
@@ -117,7 +101,6 @@ function SearchOrders({ onResults }) {
           >
             Reset
           </button>
-
         </div>
       </form>
     </section>
