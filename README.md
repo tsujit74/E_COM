@@ -1,6 +1,3 @@
-
-
-````markdown
 # VPLAK Order Management Panel
 
 A full-stack Order Management Panel built as a technical assignment using React, Node.js, and Express.
@@ -90,7 +87,8 @@ Supported search types:
 cd backend
 npm install
 npm run dev
-````
+
+```
 
 Backend:
 
