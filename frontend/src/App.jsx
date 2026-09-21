@@ -1,12 +1,20 @@
+import { useState } from "react";
 import Navbar from "./components/Navbar";
+import SearchOrders from "./components/SearchOrders";
 
 function App() {
+  const [searchResults, setSearchResults] = useState(null);
+
   return (
     <>
       <Navbar />
 
       <main className="page-container">
-        <h1>Order Panel</h1>
+        <SearchOrders onResults={setSearchResults} />
+
+        {searchResults && (
+          <p className="result-info">{searchResults.length} order(s) found</p>
+        )}
       </main>
     </>
   );
