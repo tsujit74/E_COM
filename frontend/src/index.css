@@ -235,3 +235,166 @@ body {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+
+.orders-section {
+  margin-top: 24px;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.order-card {
+  background: #fff;
+  border: 1px solid #dfe3e6;
+  padding: 20px 24px;
+}
+
+.order-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e7e9;
+}
+
+.order-header h3 {
+  margin: 0 0 5px;
+  font-size: 16px;
+  color: #202124;
+}
+
+.order-header p {
+  margin: 0;
+  font-size: 12px;
+  color: #777;
+}
+
+.order-status {
+  padding: 6px 10px;
+  border-radius: 3px;
+  background: #e8f6f3;
+  color: #128477;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.order-info {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  padding: 18px 0;
+}
+
+.order-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.order-info strong {
+  color: #777;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.order-info span {
+  color: #30343b;
+  font-size: 13px;
+  word-break: break-word;
+}
+
+.product-section {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid #e5e7e9;
+  border-bottom: 1px solid #e5e7e9;
+}
+
+.product-image {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border: 1px solid #e5e7e9;
+}
+
+.product-details h4 {
+  margin: 0 0 6px;
+  color: #202124;
+  font-size: 15px;
+}
+
+.product-details p {
+  margin: 0 0 12px;
+  color: #777;
+  font-size: 12px;
+}
+
+.product-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.product-meta span {
+  color: #555;
+  font-size: 12px;
+}
+
+.order-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 16px;
+}
+
+.track-btn,
+.invoice-btn {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.track-btn {
+  border: 1px solid #159a8c;
+  background: #159a8c;
+  color: #fff;
+}
+
+.invoice-btn {
+  border: 1px solid #cfd4d8;
+  background: #fff;
+  color: #444;
+}
+
+.track-btn:hover {
+  background: #128477;
+}
+
+.invoice-btn:hover {
+  background: #f3f5f6;
+}
+
+.no-orders {
+  margin-top: 24px;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #dfe3e6;
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+}
+
+.result-info {
+  margin: 14px 0 0;
+  color: #666;
+  font-size: 13px;
+}
