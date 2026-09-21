@@ -18,7 +18,7 @@ const orders = [
       delivery: 0,
       charges: 0,
       discount: 150,
-      image: "https://placehold.co/100x100?text=Headphones"
+      image: "/products/headphones.jpg"
     },
     status: "Delivered",
     tracking: [
@@ -50,7 +50,7 @@ const orders = [
       delivery: 100,
       charges: 50,
       discount: 350,
-      image: "https://placehold.co/100x100?text=Monitor"
+      image: "/products/monitor.jpg"
     },
     status: "Shipped",
     tracking: [
@@ -82,7 +82,7 @@ const orders = [
       delivery: 0,
       charges: 0,
       discount: 100,
-      image: "https://placehold.co/100x100?text=Power+Bank"
+      image: "/products/powerbank.jpg"
     },
     status: "Processing",
     tracking: [
@@ -114,7 +114,7 @@ const orders = [
       delivery: 0,
       charges: 100,
       discount: 300,
-      image: "https://placehold.co/100x100?text=Keyboard"
+      image: "/products/keyboard.jpg"
     },
     status: "Confirmed",
     tracking: [
@@ -146,7 +146,7 @@ const orders = [
       delivery: 80,
       charges: 0,
       discount: 229,
-      image: "https://placehold.co/100x100?text=Shoes"
+      image: "/products/shoes.jpg"
     },
     status: "Out for Delivery",
     tracking: [
@@ -178,7 +178,7 @@ const orders = [
       delivery: 0,
       charges: 100,
       discount: 400,
-      image: "https://placehold.co/100x100?text=Smart+Watch"
+      image: "/products/smartwatch.jpg"
     },
     status: "Processing",
     tracking: [
